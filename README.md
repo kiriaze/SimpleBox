@@ -23,7 +23,7 @@ SimpleBox
 				Header Content
 			</header>
 
-			<img src="img/images/image-thumb-22.jpg" data-img="img/images/image-full-22.jpg" alt="" />
+			<img src="images/image-thumb-22.jpg" data-img="images/1.jpg" alt="" />
 
 			<p>Lorem ipsum dolor sit amet.</p>
 
