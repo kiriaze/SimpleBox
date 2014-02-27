@@ -1,193 +1,466 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Grid Expander</title>
-		<meta name="viewport" content="width=device-width,initial-scale=1.0">
-		<link href="css/style.css" rel="stylesheet">
-	</head>
-	<body>
-		<div class="wrapper">
-			
-			<!-- GridContainer -->
-			<div class="grid-container">
+<head>
+    <meta charset="utf-8">
+    <title>SimpleBox</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-				<div class="gridExpander-list mix postlisting box-fourth  box media mix_all"
-				data-name="We woke up at 430 am and chased the sunrise to the top of the mountain. @redhead_alison is an amazing person; she’s all about adventure!"
-				data-author="Casey Lee"
-				data-time="1378594236"
-				data-popularity="0"
-				data-image-full="http://distilleryimage6.s3.amazonaws.com/e9577b64180f11e3800122000a1fbf61_7.jpg"
-				data-id="3883"
-				data-avatar="http://distilleryimage6.s3.amazonaws.com/e9577b64180f11e3800122000a1fbf61_5.jpg">
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans|Quicksand:300|Maven+Pro:400' rel='stylesheet' type='text/css'>
 
-					<header>
-						<h5 class="favorite-type icon icon-flag">FAVORITE TYPE HERE</h5>
-					</header>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    
+    <header class="intro">
+        <h1 class="absurd paddless">SimpleBox</h1>
+        <h5>An absurdly simple and fast responsive gallery</h5>
+    </header>
 
-					<a class="photo-wrap" href="javascript:;"
-						data-title="We woke up at 430 am and chased the sunrise to the top of the mountain. @redhead_alison is an amazing person; she’s all about adventure!"
-						data-largesrc="http://distilleryimage6.s3.amazonaws.com/e9577b64180f11e3800122000a1fbf61_7.jpg"
-						data-description=""
-					>
+    <!-- simpleBox -->
+    <ul data-layout="grid" class="demo simpleBox">
 
-						<span class="photo-wrap-overlay"></span>
-						
-						<img src="img/grid-images/grid-image-thumb-1.jpg" data-img="http://distilleryimage6.s3.amazonaws.com/e9577b64180f11e3800122000a1fbf61_7.jpg" alt="" class="gridExpander-img">
+        <li>
 
-						<div class="box-meta">
+            <header>
+                <h2>First Title</h2>
+            </header>
 
-							<ul>
-								<li class='likes'>7</li>
-								<li class='comments'>33</li>
-							</ul>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, blanditiis voluptates nisi commodi fugit provident tempora sequi eligendi autem corrupti non earum corporis sit molestias accusantium magnam harum hic aliquam! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, blanditiis voluptates nisi commodi fugit provident tempora sequi eligendi autem corrupti non earum corporis sit molestias accusantium magnam harum hic aliquam!</p>
 
-						</div>
-					</a>
+            <footer>
+                <div class="meta">
+                    <span class="user">name</span>
+                    <span class="title">some title</span>
+                    <time class="date">11.20.24</time>
+                </div>
+            </footer>
 
-					<footer>
-						<div class="avatar" style="background:url('http://i.imgur.com/Xrj3OQT.jpg') no-repeat center; background-size: cover;"></div>
-						<div class="details">
-							<span class="user">name</span>
-							<span class="title">some title</span>
-							<time class="date">11.20.24</time>
-						</div>
-						<div class="like likes-js">
-							<span class="like-btn icon icon-heart">
-								like it
-							</span>
-						</div>
-					</footer>
-				</div>
-				<div class="gridExpander-list mix postlisting box-fourth  box media mix_all"
-				data-name="the second tezt"
-				data-author="another author"
-				data-time="1378594236"
-				data-popularity="0"
-				data-image-full="http://distilleryimage6.s3.amazonaws.com/e9577b64180f11e3800122000a1fbf61_7.jpg"
-				data-id="3883"
-				data-avatar="http://distilleryimage6.s3.amazonaws.com/e9577b64180f11e3800122000a1fbf61_5.jpg">
+            <img src="img/images/1b.jpg" data-sbox-img="img/images/1.jpg" alt="" />
 
-					<header>
-						<h5 class="favorite-type icon icon-flag">FAVORITE TYPE HERE</h5>
-					</header>
+        </li>
 
-					<a class="photo-wrap" href="javascript:;"
-						data-title="the second tezt"
-						data-largesrc="http://distilleryimage6.s3.amazonaws.com/e9577b64180f11e3800122000a1fbf61_7.jpg"
-						data-description=""
-					>
+        <li>
 
-						<span class="photo-wrap-overlay"></span>
-						
-						<img src="img/grid-images/grid-image-thumb-1.jpg" data-img="http://distilleryimage6.s3.amazonaws.com/e9577b64180f11e3800122000a1fbf61_7.jpg" alt="" class="gridExpander-img">
+            <img src="img/images/2b.jpg" data-sbox-img="img/images/2.jpg" alt="" />
 
-						<div class="box-meta">
+            <header>
+                <h2>Second Title</h2>
+            </header>
 
-							<ul>
-								<li class='likes'>10000</li>
-								<li class='comments'>5455554</li>
-							</ul>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, eveniet, enim ut eligendi voluptas excepturi laborum hic cumque minus debitis tempore id provident rem asperiores fuga nobis sit vel ex!</p>
 
-						</div>
-					</a>
+            <footer>
+                other footer info
+            </footer>
 
-					<footer>
-						<div class="avatar" style="background:url('http://i.imgur.com/Xrj3OQT.jpg') no-repeat center; background-size: cover;"></div>
-						<div class="details">
-							<span class="user">another name</span>
-							<span class="title">booooosssaaa</span>
-							<time class="date">christmas</time>
-						</div>
-						<div class="like likes-js">
-							<span class="like-btn icon icon-heart">
-								already like it
-							</span>
-						</div>
-					</footer>
-				</div>
-				<!--
-				--><div class="gridExpander-list">
-					<img src="img/grid-images/grid-image-thumb-3.jpg" data-img="img/grid-images/grid-image-full-3.jpg" alt="" class="gridExpander-img">
-				</div><!--
-				--><div class="gridExpander-list">
-					<img src="img/grid-images/grid-image-thumb-4.jpg" data-img="img/grid-images/grid-image-full-4.jpg" alt="" class="gridExpander-img">
-				</div><!--
-				--><div class="gridExpander-list">
-					<img src="img/grid-images/grid-image-thumb-5.jpg" data-img="img/grid-images/grid-image-full-5.jpg" alt="" class="gridExpander-img">
-				</div><!--
-				--><div class="gridExpander-list">
-					<img src="img/grid-images/grid-image-thumb-6.jpg" data-img="img/grid-images/grid-image-full-6.jpg" alt="" class="gridExpander-img">
-				</div><!--
-				--><div class="gridExpander-list">
-					<img src="img/grid-images/grid-image-thumb-7.jpg" data-img="img/grid-images/grid-image-full-7.jpg" alt="" class="gridExpander-img">
-				</div><!--
-				--><div class="gridExpander-list">
-					<img src="img/grid-images/grid-image-thumb-8.jpg" data-img="img/grid-images/grid-image-full-8.jpg" alt="" class="gridExpander-img">
-				</div><!--
-				--><div class="gridExpander-list">
-					<img src="img/grid-images/grid-image-thumb-9.jpg" data-img="img/grid-images/grid-image-full-9.jpg" alt="" class="gridExpander-img">
-				</div><!--
-				--><div class="gridExpander-list">
-					<img src="img/grid-images/grid-image-thumb-10.jpg" data-img="img/grid-images/grid-image-full-10.jpg" alt="" class="gridExpander-img">
-				</div><!--
-				--><div class="gridExpander-list">
-					<img src="img/grid-images/grid-image-thumb-11.jpg" data-img="img/grid-images/grid-image-full-11.jpg" alt="" class="gridExpander-img">
-				</div><!--
-				--><div class="gridExpander-list">
-					<img src="img/grid-images/grid-image-thumb-12.jpg" data-img="img/grid-images/grid-image-full-12.jpg" alt="" class="gridExpander-img">
-				</div><!--
-				--><div class="gridExpander-list">
-					<img src="img/grid-images/grid-image-thumb-13.jpg" data-img="img/grid-images/grid-image-full-13.jpg" alt="" class="gridExpander-img">
-				</div><!--
-				--><div class="gridExpander-list">
-					<img src="img/grid-images/grid-image-thumb-14.jpg" data-img="img/grid-images/grid-image-full-14.jpg" alt="" class="gridExpander-img">
-				</div><!--
-				--><div class="gridExpander-list">
-					<img src="img/grid-images/grid-image-thumb-15.jpg" data-img="img/grid-images/grid-image-full-15.jpg" alt="" class="gridExpander-img">
-				</div><!--
-				--><div class="gridExpander-list">
-					<img src="img/grid-images/grid-image-thumb-16.jpg" data-img="img/grid-images/grid-image-full-16.jpg" alt="" class="gridExpander-img">
-				</div><!--
-				--><div class="gridExpander-list">
-					<img src="img/grid-images/grid-image-thumb-17.jpg" data-img="img/grid-images/grid-image-full-17.jpg" alt="" class="gridExpander-img">
-				</div><!--
-				--><div class="gridExpander-list">
-					<img src="img/grid-images/grid-image-thumb-18.jpg" data-img="img/grid-images/grid-image-full-18.jpg" alt="" class="gridExpander-img">
-				</div><!--
-				--><div class="gridExpander-list">
-					<img src="img/grid-images/grid-image-thumb-19.jpg" data-img="img/grid-images/grid-image-full-19.jpg" alt="" class="gridExpander-img">
-				</div><!--
-				--><div class="gridExpander-list">
-					<img src="img/grid-images/grid-image-thumb-20.jpg" data-img="img/grid-images/grid-image-full-20.jpg" alt="" class="gridExpander-img">
-				</div><!--
-				--><div class="gridExpander-list">
-					<img src="img/grid-images/grid-image-thumb-21.jpg" data-img="img/grid-images/grid-image-full-21.jpg" alt="" class="gridExpander-img">
-				</div><!--
-				--><div class="gridExpander-list">
-					<img src="img/grid-images/grid-image-thumb-22.jpg" data-img="img/grid-images/grid-image-full-22.jpg" alt="" class="gridExpander-img">
-				</div><!--
-				--><div class="gridExpander-list">
-					<img src="img/grid-images/grid-image-thumb-23.jpg" data-img="img/grid-images/grid-image-full-23.jpg" alt="" class="gridExpander-img">
-				</div><!--
-				--><div class="gridExpander-list">
-					<img src="img/grid-images/grid-image-thumb-24.jpg" data-img="img/grid-images/grid-image-full-24.jpg" alt="" class="gridExpander-img">
-				</div>
-				<div class="gridExpander-float"></div>
-			</div>
-			<!-- /SuperBox -->
-			
-		</div>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script src="js/imagesloaded.js"></script>
-		<script src="js/gridExpander.js"></script>
-		<script>
-		$(document).ready(function(){
-		
-			// Call SuperBox
-			$('.grid-container').GridExpander();
-		
-		});
-		</script>
-	</body>
+        </li>
+
+        <li>
+
+            <header>
+                <h2>Third Title</h2>
+            </header>
+
+            <img src="img/images/3b.jpg" data-sbox-img="img/images/3.jpg" alt="" />
+
+            <p>Other content</p>
+
+            <footer>
+                other footer info
+            </footer>
+
+        </li>
+
+        <li>
+
+            <header>
+                <h2>Second Title</h2>
+            </header>
+
+            <img src="img/images/4b.jpg" data-sbox-img="img/images/4.jpg" alt="" />
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, eveniet, enim ut eligendi voluptas excepturi laborum hic cumque minus debitis tempore id provident rem asperiores fuga nobis sit vel ex!</p>
+
+            <footer>
+                other footer info
+            </footer>
+
+        </li>
+
+        <li>
+
+            <header>
+                <h2>Second Title</h2>
+            </header>
+
+            <img src="img/images/5b.jpg" data-sbox-img="img/images/5.jpg" alt="" />
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, eveniet, enim ut eligendi voluptas excepturi laborum hic cumque minus debitis tempore id provident rem asperiores fuga nobis sit vel ex!</p>
+
+            <footer>
+                other footer info
+            </footer>
+
+        </li>
+
+        <li>
+
+            <header>
+                <h2>Second Title</h2>
+            </header>
+
+            <img src="img/images/6b.jpg" data-sbox-img="img/images/6.jpg" alt="" />
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, eveniet, enim ut eligendi voluptas excepturi laborum hic cumque minus debitis tempore id provident rem asperiores fuga nobis sit vel ex!</p>
+
+            <footer>
+                other footer info
+            </footer>
+
+        </li>
+
+        <li>
+
+            <header>
+                <h2>Second Title</h2>
+            </header>
+
+            <img src="img/images/2b.jpg" data-sbox-img="img/images/2.jpg" alt="" />
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, eveniet, enim ut eligendi voluptas excepturi laborum hic cumque minus debitis tempore id provident rem asperiores fuga nobis sit vel ex!</p>
+
+            <footer>
+                other footer info
+            </footer>
+
+        </li>
+
+        <li>
+
+            <header>
+                <h2>First Title</h2>
+            </header>
+
+            <img src="img/images/1b.jpg" data-sbox-img="img/images/1.jpg" alt="" />
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, blanditiis voluptates nisi commodi fugit provident tempora sequi eligendi autem corrupti non earum corporis sit molestias accusantium magnam harum hic aliquam! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, blanditiis voluptates nisi commodi fugit provident tempora sequi eligendi autem corrupti non earum corporis sit molestias accusantium magnam harum hic aliquam!</p>
+
+            <footer>
+                <div class="meta">
+                    <span class="user">name</span>
+                    <span class="title">some title</span>
+                    <time class="date">11.20.24</time>
+                </div>
+            </footer>
+        </li>
+
+        <li>
+
+            <header>
+                <h2>Second Title</h2>
+            </header>
+
+            <img src="img/images/4b.jpg" data-sbox-img="img/images/4.jpg" alt="" />
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, eveniet, enim ut eligendi voluptas excepturi laborum hic cumque minus debitis tempore id provident rem asperiores fuga nobis sit vel ex!</p>
+
+            <footer>
+                other footer info
+            </footer>
+
+        </li>
+
+        <li>
+
+            <header>
+                <h2>Second Title</h2>
+            </header>
+
+            <img src="img/images/3b.jpg" data-sbox-img="img/images/3.jpg" alt="" />
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, eveniet, enim ut eligendi voluptas excepturi laborum hic cumque minus debitis tempore id provident rem asperiores fuga nobis sit vel ex!</p>
+
+            <footer>
+                other footer info
+            </footer>
+
+        </li>
+
+        <li>
+
+            <header>
+                <h2>Second Title</h2>
+            </header>
+
+            <img src="img/images/6b.jpg" data-sbox-img="img/images/6.jpg" alt="" />
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, eveniet, enim ut eligendi voluptas excepturi laborum hic cumque minus debitis tempore id provident rem asperiores fuga nobis sit vel ex!</p>
+
+            <footer>
+                other footer info
+            </footer>
+
+        </li>
+
+        <li>
+
+            <header>
+                <h2>Second Title</h2>
+            </header>
+
+            <img src="img/images/5b.jpg" data-sbox-img="img/images/5.jpg" alt="" />
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, eveniet, enim ut eligendi voluptas excepturi laborum hic cumque minus debitis tempore id provident rem asperiores fuga nobis sit vel ex!</p>
+
+            <footer>
+                other footer info
+            </footer>
+
+        </li>
+
+        <li>
+
+            <header>
+                <h2>First Title</h2>
+            </header>
+
+            <img src="img/images/1b.jpg" data-sbox-img="img/images/1.jpg" alt="" />
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, blanditiis voluptates nisi commodi fugit provident tempora sequi eligendi autem corrupti non earum corporis sit molestias accusantium magnam harum hic aliquam! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, blanditiis voluptates nisi commodi fugit provident tempora sequi eligendi autem corrupti non earum corporis sit molestias accusantium magnam harum hic aliquam!</p>
+
+            <footer>
+                <div class="meta">
+                    <span class="user">name</span>
+                    <span class="title">some title</span>
+                    <time class="date">11.20.24</time>
+                </div>
+            </footer>
+
+        </li>
+
+        <li>
+
+            <header>
+                <h2>Second Title</h2>
+            </header>
+
+            <img src="img/images/2b.jpg" data-sbox-img="img/images/2.jpg" alt="" />
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, eveniet, enim ut eligendi voluptas excepturi laborum hic cumque minus debitis tempore id provident rem asperiores fuga nobis sit vel ex!</p>
+
+            <footer>
+                other footer info
+            </footer>
+
+        </li>
+
+        <li>
+
+            <header>
+                <h2>Second Title</h2>
+            </header>
+
+            <img src="img/images/3b.jpg" data-sbox-img="img/images/3.jpg" alt="" />
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, eveniet, enim ut eligendi voluptas excepturi laborum hic cumque minus debitis tempore id provident rem asperiores fuga nobis sit vel ex!</p>
+
+            <footer>
+                other footer info
+            </footer>
+
+        </li>
+
+        <li>
+
+            <header>
+                <h2>Second Title</h2>
+            </header>
+
+            <img src="img/images/4b.jpg" data-sbox-img="img/images/4.jpg" alt="" />
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, eveniet, enim ut eligendi voluptas excepturi laborum hic cumque minus debitis tempore id provident rem asperiores fuga nobis sit vel ex!</p>
+
+            <footer>
+                other footer info
+            </footer>
+
+        </li>
+
+        <li>
+
+            <header>
+                <h2>Second Title</h2>
+            </header>
+
+            <img src="img/images/5b.jpg" data-sbox-img="img/images/5.jpg" alt="" />
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, eveniet, enim ut eligendi voluptas excepturi laborum hic cumque minus debitis tempore id provident rem asperiores fuga nobis sit vel ex!</p>
+
+            <footer>
+                other footer info
+            </footer>
+
+        </li>
+
+        <li>
+            <img src="img/images/6b.jpg" data-sbox-img="img/images/6.jpg" alt="" />
+        </li>
+
+        <!-- fillers - max number of cols - 2 -->
+        <li class="filler"></li>
+        <li class="filler"></li>
+        <li class="filler"></li>
+        <li class="filler"></li>
+
+    </ul>
+    <!-- /SimpleBox -->
+
+<div data-layout="grid">
+
+    <h2>Include reuired scripts</h2>
+<pre>
+&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="js/imagesloaded.js"&gt;&lt;/script&gt;
+&lt;script src="js/simpleBox.js"&gt;&lt;/script&gt;
+</pre>
+
+    <h2>Call SimpleBox</h2>
+    <pre>$.simpleBox();</pre>
+
+    <br />
+    <h2>Markup</h2>
+    <p>By default, simplebox targets container with class of <code>.simpleBox</code> and works with atleast the specified markup below. A container, a selector <code>li</code>, and an image with a data-attribute of <code>data-sbox-img</code>.</p>
+<pre>
+&lt;ul class="simpleBox"&gt;
+    &lt;li&gt;
+        &lt;img src="imageThumb.jpg" data-sbox-img="imageFull.jpg" alt="" /&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+    <h2>Styles</h2>
+    <p>Although this demo uses SimpleGrid for flush grid systems - the only required styles are listed below.</p>
+<pre>
+*,
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+li, 
+.filler {
+    display: inline-block;
+    position: relative;
+    width: calc(100%/6); // number of columns
+    -webkit-transform: translate3d(0,0,0); // hover transition fix for webkit
+}
+
+li > *:not(img) {
+    display: none;
+}
+
+li img {
+    max-width: 100%;
+    width: 100%;
+    display: none;
+}
+
+.simpleBox-show {   
+    position: relative;
+    width: 100%;
+    float: left;
+    display: none;
+}
+
+.simpleBox-current-img {
+    max-width: 100%;
+}
+
+li .overlay {
+    
+}
+
+.simpleBox-content {
+    
+}
+
+.simpleBox-close {
+
+}
+
+// Responsivenesssssssss
+@media only screen and (max-width: 960px) {
+    li,
+    .filler {
+        width: calc(100%/5);
+    }
+    .simpleBox-content {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    li,
+    .filler {
+        width: calc(100%/4);
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    li, 
+    .filler {
+        width: calc(100%/3);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    li,
+    .filler {
+        width: calc(100%/2);
+    }
+}
+</pre>
+
+<br />
+<h2>Advanced</h2>
+<p>However, it can work with any markup and any container class by setting a container and options. If selector in options is not li, then the styles should be updated to reflect selector.</p>
+<pre>
+$('.container').simpleBox({
+    duration: 350,          // vary the speed of animation
+    easing: 'swing',        // the easing function for animation // expo, cubic, circ, swing
+    activeClass: 'active',  // class given to the active element
+    selector: 'li',         // defaults to li
+    sequentialLoad: true,   // fade in images sequentially
+    overlay: true           // hover overlay
+});
+</pre>
+
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/prettify.js"></script>
+<script src="js/imagesloaded.js"></script>
+<script src="js/simpleBox.js"></script>
+<script>
+    $(document).ready(function(){
+
+        $('pre, code').addClass('prettyprint');
+        prettyPrint();
+
+        // Call simpleBox
+        // $('.simpleBox').simpleBox();
+        $.simpleBox({
+            sequentialLoad: false
+        });
+
+    });
+</script>
+
+</body>
 </html>

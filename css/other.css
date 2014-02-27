@@ -1,0 +1,52 @@
+*,
+*:after,
+*:before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* SimpleGrid simplified */
+[data-layout="grid"] {
+	text-align: justify;
+    font-size: 0px;
+    max-width: 960px;
+
+    overflow: hidden;
+    margin: 0 auto;
+
+    background: blue;
+}
+
+[data-layout="grid"]:after{
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+[data-layout="grid"] > * {
+ 	font-size: initial;
+	text-align: initial;
+}
+
+[data-layout="grid"] > li {
+	display: inline-block;
+    position: relative;
+	*display: inline;
+	zoom: 1;
+	width: calc(100%/3);
+}
+
+html {
+	font-size: 16px;
+}
+
+body {
+	font: 100%/1.5 'Open Sans',sans-serif;
+}
+
+ul[data-layout="grid"] > li {
+	height: 200px;
+	width: 32%;
+	background: red;
+}

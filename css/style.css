@@ -1,101 +1,367 @@
 /*
-	Kiriaze Labs
-	URL: www.kiriaze.com
+	SimpleBox
+	URL: www.getsimple.com
 */
 
 /*------------------------------------*\
     Grid Expander
 \*------------------------------------*/
+
+
+/* SimpleGrid simplified */
+[data-layout="grid"] {
+	text-align: justify;
+    font-size: 0px;
+    max-width: 960px;
+
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+[data-layout="grid"]:after{
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+[data-layout="grid"] > * {
+ 	font-size: initial;
+	text-align: initial;
+}
+
 *,
 *:after,
 *:before {
-	margin:0;
-	padding:0;
-	box-sizing:border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
+
+html {
+	font-size: 16px;
+}
+
 body {
-	background:#000;
+	/*background: #000;*/
+	border-top: 3px solid red;
+	font: 100%/1.5 'PT Sans',sans-serif;
+	padding: 100px 0;
 }
+
 ul {
-	list-style:none;
+	list-style: none;
 }
+
 img {
-	vertical-align:bottom;
+	vertical-align: bottom;
 }
 
-/* Grid Expander */
-.gridExpander-list {
-	display:inline-block;
-	*display:inline;
-	zoom:1;
-	width:12.5%;
+h1,h2,h3,h4,h5,h6 {
+	font-family: 'Maven Pro', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: normal;
+	text-transform: uppercase;
+	padding: 0 0 .5em;
 }
-.gridExpander-img {
-	max-width:100%;
-	width:100%;
-	cursor:pointer;
+
+h1 { 
+	font-size: 46px;
 }
-.gridExpander-show {
-	text-align:center;
-	position:relative;
-	background:#333;
-	box-shadow:inset 0 1px 5px #111;
-	-webkit-box-shadow:inset 0 1px 5px #111;
-	-moz-box-shadow:inset 0 1px 5px #111;
-	width:100%;
-    float:left;
-	padding:25px;
-	display:none;
-	
-	/*transition: all .15s linear;*/
-	height: 500px; /* needs height for smoothness */
+
+h2 {
+	font-size: 38px;
 }
-.gridExpander-current-img {
-	max-width:100%;
+
+h3 { 
+	font-size: 32px;
+}
+
+h4 {
+	font-size: 26px;
+}
+
+h5 { 
+	font-size: 22px;
+}
+
+h6 { 
+	font-size: 18px;
+}
+
+h1.absurd {
+	font-size: 10.45rem;
+	line-height: 1em;
+}
+
+.paddless {
+	padding: 0;
+}
+
+.intro {
+	/*color: white;*/
+	color: red;
+	word-break: break-all;
+	text-align: center;
+	padding-bottom: 5rem;
+}
+	.intro h1{
+		font-family: 'Quicksand', sans-serif;
+		font-weight: 300;
+	}
+
+.demo {
+	padding: 0 0 100px 0;
+	max-width: 100%;
+}
+
+
+
+/* simpleBox */
+ul, li, img {
+	transition: all 0.2s ease-in-out;
+}
+
+ul:hover li { 
+ 	opacity: .3; 
+ 	-webkit-filter: grayscale(1);
+}
+ 
+ul:hover li:hover { 
+ 	opacity: 1.0; 
+ 	-webkit-filter: grayscale(0);
+}	
+
+li, 
+.filler {
+	display: inline-block;
+    position: relative;
+	*display: inline;
+	zoom: 1;
+	width: calc(100%/6);
+	-webkit-transform: translate3d(0,0,0);
+}
+
+li {
+	cursor: pointer;
+	overflow: hidden;
+}
+
+li > *:not(img) {
+	display: none;
+}
+
+li .overlay{
+/*	line-height: normal;
+	padding: 15px;
+	font-size: 2em;
+	text-transform: uppercase;
+	background: rgba(252, 0, 0, 0.8);
+	color: #fff;
+	position: absolute;
+	top:0;
+	left:0;
+	display: block;
+	width: 100%;
 	height: 100%;
-	box-shadow:0 1px 4px #222;
-	border:1px solid #222;
-}
-.gridExpander-img:hover {
-	opacity:0.8;
-}
-.gridExpander-float {
-	float:left;
-}
-.gridExpander-close {
-	opacity:0.7;
-	cursor:pointer;
-	position:absolute;
-	top:25px;
-	right:25px;
-	background:url(../img/close.gif) no-repeat center center;
-	width:35px;
-	height:35px;
-}
-.gridExpander-close:hover {
-	opacity:1;
+	transition: all 0.15s ease-in-out;
+	opacity: 0;*/
 }
 
-@media only screen and (min-width: 320px) {
-	.gridExpander-list {
-		width:50%;
+li .overlay::before{
+/*    content: '+';
+    display: block;
+    font-size: 32px;
+    line-height: 1em;
+    height: 1em;
+    text-align: center;
+    width: 1em;
+    position: absolute;
+    top: 50%;
+    margin: -0.5em 0 0 -0.5em;
+    left: 50%;*/
+}
+
+li:hover .overlay,
+li.active .overlay{
+	opacity: 1;
+}
+
+li img {
+	max-width: 100%;
+	width: 100%;
+	display: none;
+}
+
+li:hover img {
+	transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-webkit-transform: scale(1.2);
+}
+
+.simpleBox-content {
+	
+}
+
+.simpleBox-show {
+	background: #f5f5f5;
+	box-shadow: inset 0 1px 5px rgba(17, 17, 17, 0.46);
+	padding: 25px;
+	text-align: center;
+
+	position: relative;
+	width: 100%;
+    float: left;
+	display: none;
+}
+	.simpleBox-show.has-content{
+		text-align: left;
 	}
-	.gridExpander-current-img{
-		height: auto;
+
+.simpleBox-current-img {
+	max-width: 100%;
+	box-shadow: 0 1px 4px #222;
+}
+	.simpleBox-show.has-content .simpleBox-current-img {
+		float: left;
+		margin-right: 20px;
+	}
+
+.simpleBox-close {
+	opacity: 0.7;
+	cursor: pointer;
+	position: absolute;
+	top: 25px;
+	right: 25px;
+}
+
+.simpleBox-close:after{
+	content: 'x';
+	position: relative;
+	font-size: 22px;
+	text-align: center;
+	text-transform: lowercase;
+	font-weight: bold;
+	font-family: sans-serif;
+}
+
+.simpleBox-close:hover {
+	opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+/* MediaQueries */
+
+@media only screen and (max-width: 960px) {
+	h1.absurd {
+		font-size: 8rem;
+	}
+	li, .filler {
+		width: calc(100%/5);
+	}
+	.simpleBox-current-img, 
+	.simpleBox-show.has-content .simpleBox-current-img {
+        float: none;
+        /*width: 100%;*/
+    }
+}
+
+@media only screen and (max-width: 768px) {
+	h1.absurd {
+		font-size: 6rem;
+	}
+	.intro h5 {
+		font-size: 1rem;
+	}
+	li, .filler {
+		width: calc(100%/4);
 	}
 }
-@media only screen and (min-width: 486px) {
-	.gridExpander-list {
-		width:25%;
+
+@media only screen and (max-width: 640px) {
+	h1.absurd {
+		font-size: 5rem;
+	}
+	.intro h5 {
+		font-size: 1rem;
+	}
+	li, .filler {
+		width: calc(100%/3);
 	}
 }
-@media only screen and (min-width: 768px) {
-	.gridExpander-list {
-		width:16.66666667%;
+
+@media only screen and (max-width: 480px) {
+	h1.absurd {
+		font-size: 4rem;
+	}
+	.intro h5 {
+		font-size: .9rem;
+	}
+	li, .filler {
+		width: calc(100%/2);
 	}
 }
-@media only screen and (min-width: 1025px) {
-	.gridExpander-list {
-		width:12.5%;
-	}
+
+
+
+
+
+
+
+
+
+
+
+/* Pretty printing styles. Used with prettify.js. */
+/* Vim sunburst theme by David Leibovic */
+
+pre .str, code .str { color: #65B042; } /* string  - green */
+pre .kwd, code .kwd { color: #E28964; } /* keyword - dark pink */
+pre .com, code .com { color: #AEAEAE; font-style: italic; } /* comment - gray */
+pre .typ, code .typ { color: #89bdff; } /* type - light blue */
+pre .lit, code .lit { color: #3387CC; } /* literal - blue */
+pre .pun, code .pun { color: #fff; } /* punctuation - white */
+pre .pln, code .pln { color: #fff; } /* plaintext - white */
+pre .tag, code .tag { color: #89bdff; } /* html/xml tag    - light blue */
+pre .atn, code .atn { color: #bdb76b; } /* html/xml attribute name  - khaki */
+pre .atv, code .atv { color: #65B042; } /* html/xml attribute value - green */
+pre .dec, code .dec { color: #3387CC; } /* decimal - blue */
+
+pre.prettyprint, code.prettyprint {
+	background-color: #000;
+}
+
+pre.prettyprint {
+	width: 95%;
+	margin: 1em auto;
+	padding: 1em;
+	white-space: pre-wrap;
+	/*tab-size: 1;*/
+}
+
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums { margin-top: 0; margin-bottom: 0; color: #AEAEAE; } /* IE indents via margin-left */
+li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: none }
+/* Alternate shading for lines */
+li.L1,li.L3,li.L5,li.L7,li.L9 { }
+
+@media print {
+  pre .str, code .str { color: #060; }
+  pre .kwd, code .kwd { color: #006; font-weight: bold; }
+  pre .com, code .com { color: #600; font-style: italic; }
+  pre .typ, code .typ { color: #404; font-weight: bold; }
+  pre .lit, code .lit { color: #044; }
+  pre .pun, code .pun { color: #440; }
+  pre .pln, code .pln { color: #000; }
+  pre .tag, code .tag { color: #006; font-weight: bold; }
+  pre .atn, code .atn { color: #404; }
+  pre .atv, code .atv { color: #060; }
 }
