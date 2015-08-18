@@ -2,7 +2,7 @@
     SimpleBox v1.0.0
     by Constantine Kiriaze: http://www.kiriaze.com
     Latest version: https://github.com/kiriaze/simpleBox
-    
+
     Copyright 2013 Constantine Kiriaze
     Licensed under the MIT license
     http://www.opensource.org/licenses/mit-license.php
@@ -20,7 +20,9 @@
             activeClass: 'active',  // class given to the active element
             selector: 'li',         // defaults to li
             sequentialLoad: true,   // fade in images sequentially
-            overlay: true           // hover overlay
+            slSpeed: 300,           // sequential load speed
+            overlay: true,          // hover overlay
+            slider: false           // slide through gallery
         };
 
     // The actual plugin constructor
@@ -32,7 +34,7 @@
 
         this._defaults  = defaults;
         this._name      = pluginName;
-        
+
         this.container  = this.element.selector ? this.element.selector : '.simpleBox';
         this.$container = $(this.container);
         this.link       = this.options.selector;
@@ -56,36 +58,36 @@
                 activeClass     = this.options.activeClass,
                 imgsLoaded      = this.options.imgsLoaded,
                 sequentialLoad  = this.options.sequentialLoad,
+                slSpeed         = this.options.slSpeed,
                 overlay         = this.options.overlay;
+                slider          = this.options.slider;
 
             // return out of function if container class isnt on page
             if ( !container.length ) return;
 
             // classes
             var simpleBoxClass      = '.simpleBox-show',
-                simpleBoxImageClass = '.simpleBox-current-img',
                 simpleBoxCloseClass = '.simpleBox-close';
 
             // elems
             var simpleBox           = $('<div class="simpleBox-show"></div>'),
-                simpleBoxImage      = $('<img src="" class="simpleBox-current-img">'),
                 simpleBoxClose      = $('<div class="simpleBox-close"></div>'),
                 simpleBoxOverlay    = $('<div class="overlay"></div>'),
                 simpleBoxContent    = $('<div class="simpleBox-content"></div>');
 
             // append markup
-            simpleBox.append(simpleBoxImage).append(simpleBoxContent).append(simpleBoxClose);
+            simpleBox.append(simpleBoxContent).append(simpleBoxClose);
 
-            if( overlay ) {
+            if ( overlay ) {
                 $(selector).not('.filler').append(simpleBoxOverlay);
             }
 
             // this.$elem = container, i.e. '.simpleBox'
             container.imagesLoaded( function(){
 
-                if( sequentialLoad ) {
+                if ( sequentialLoad ) {
                     (function hidenext(jq){
-                        jq.eq(0).fadeIn(300, function(){
+                        jq.eq(0).fadeIn(slSpeed, function(){
                             (jq=jq.slice(1)).length && hidenext(jq);
                         });
                     })($('img'));
@@ -93,27 +95,43 @@
                     $('img').show();
                 }
 
+                // if slider enabled, allow for sliding through gallery
+                if ( slider ) {
+                    var next = $('<span class="next">Next</span>'),
+                        prev = $('<span class="prev">Prev</span>'),
+                        pagination = next.add(prev);
+                    simpleBox.append(pagination);
+                    // add index for slider reference in paginate function
+                    $.each($(selector), function(index, val) {
+                        $(this).attr('data-slider-index', index);
+                    });
+                }
+
                 container.on('click', selector, { myOptions: this.options }, function(e) {
 
-                    var currentimg = $(this).find('img'),
-                        imgData = currentimg.data('sbox-img');
-                        
-                    simpleBoxImage.attr('src', imgData);
+                    $this = $(this);
 
-                    // find all elems other than image
-                    var elements = $(this).find(currentimg).siblings();
+                    // find all elems
+                    var elements = $this;
                     var content = [];
 
                     // push them all into array
                     elements.each(function(){
                         content.push($(this).html());
-                    })
+                    });
 
                     // attach array of content into container
                     simpleBoxContent.html(content);
 
+                    function imgSwap() {
+                        $.each( $('.simpleBox-content img[data-sbox-img]'), function(index, val) {
+                            $(this).attr('src', $(this).attr('data-sbox-img'));
+                        });
+                    }
+
                     // if only has image, dont add container
-                    if( content == '' ) {
+                    // rewrite this since now im just appending all the content
+                    if ( content == '' ) {
                         simpleBox.removeClass('has-content');
                         simpleBoxContent.remove();
                     } else {
@@ -122,58 +140,58 @@
                     }
 
                     // Active state
-                    if( !$(this).hasClass(activeClass) ){
+                    if ( !$this.hasClass(activeClass) ){
                         $(selector).removeClass(activeClass);
-                        $(this).addClass(activeClass);
+                        $this.addClass(activeClass);
                     } else {
-                        $(this).removeClass(activeClass);
+                        $this.removeClass(activeClass);
                     }
-                    
-                    if ( $(this).next().is(simpleBoxClass) ) {
 
-                        // if( $(this).hasClass(activeClass) ) {
-                        //     $(simpleBoxClass).animate({opacity: 1}, duration, easing, function() {
-                        //         $(simpleBoxClass).slideDown(duration, easing);
-                        //     })
-                        // } else {
-                        //     $(simpleBoxClass).animate({opacity: 0}, duration, easing, function() {
-                        //         $(simpleBoxClass).slideUp(duration, easing);
-                        //     })
-                        // }
+                    //
+                    if ( $this.next().is(simpleBoxClass) ) {
                         $(simpleBoxClass).slideToggle(duration, easing);
                     } else {
                         simpleBox.insertAfter(this).hide().fadeIn(duration, easing);
-                        
-                        // simpleBox.insertAfter(this).hide().fadeIn(duration, easing, function(){
-                        
-                        //     // simpleBox.slideDown(duration, easing, function(){
-                        //     //     simpleBox.animate({opacity: 1}, duration, easing);
-                        //     // });
-
-                        //     // simpleBox.animate({opacity: 1}, duration, easing);
-
-                        //     simpleBox.animate({opacity: 1}, duration, easing, function() {
-                        //         $(simpleBoxClass).slideDown(duration, easing);
-                        //     })
-
-                        // });
                     }
-                    
+
+                    // slider pagination function
+                    // .off() to prevent from multiple fires
+                    pagination.off().on('click', function(e){
+                        if ( e.target.className == 'next' ) {
+                            console.log('next');
+                            var index = $(this).parents(simpleBox).siblings('.active').attr('data-slider-index'),
+                                newIndex = parseInt(index) + 1;
+
+                        } else {
+                            console.log('prev');
+                            var index = $(this).parents(simpleBox).siblings('.active').attr('data-slider-index'),
+                                newIndex = parseInt(index) - 1;
+                        }
+
+                        $(selector).removeClass('active');
+
+                        var elem    = $(selector + '[data-slider-index='+ newIndex +']'),
+                            content = elem.html(),
+                            newElem = $(selector + '[data-slider-index='+ newIndex +']').addClass('active');
+
+                        simpleBoxContent.html(content);
+                        simpleBox.insertAfter(newElem).hide().fadeIn(duration, easing);
+                        imgSwap();
+                        $('html, body').animate({
+                            scrollTop: newElem.offset().top
+                        }, duration, easing);
+                    });
+
+                    $(simpleBoxClose).on('click', function(e) {
+                        $(selector).removeClass(activeClass);
+                        $(simpleBoxClass).slideUp(duration, easing);
+                    });
+
+                    imgSwap();
                     $('html, body').animate({
-                        // scrollTop:simpleBox.offset().top - currentimg.width()
-                        scrollTop:$(this).offset().top
+                        scrollTop: $this.offset().top
                     }, duration, easing);
-                    
-                });
 
-                $(this).on('click', simpleBoxCloseClass, function() {
-                    $(selector).removeClass(activeClass);
-
-                    $(simpleBoxClass).slideUp(duration, easing);
-
-                    // $(simpleBoxClass).animate({opacity: 0}, duration, easing, function() {
-                    //     $(simpleBoxClass).slideUp(duration, easing);
-                    // });
                 });
 
             });
@@ -191,7 +209,7 @@
             }
         })
     };
-    
+
     // Made into selectorless call
     $[pluginName] = function(options) {
         var $window = $(window);

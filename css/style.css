@@ -65,7 +65,7 @@ h1,h2,h3,h4,h5,h6 {
 	padding: 0 0 .5em;
 }
 
-h1 { 
+h1 {
 	font-size: 46px;
 }
 
@@ -73,7 +73,7 @@ h2 {
 	font-size: 38px;
 }
 
-h3 { 
+h3 {
 	font-size: 32px;
 }
 
@@ -81,11 +81,11 @@ h4 {
 	font-size: 26px;
 }
 
-h5 { 
+h5 {
 	font-size: 22px;
 }
 
-h6 { 
+h6 {
 	font-size: 18px;
 }
 
@@ -122,17 +122,17 @@ ul, li, img {
 	transition: all 0.2s ease-in-out;
 }
 
-ul:hover li { 
- 	opacity: .3; 
- 	-webkit-filter: grayscale(1);
+ul:hover li:not(.active) {
+	opacity: .3;
+	-webkit-filter: grayscale(1);
 }
- 
-ul:hover li:hover { 
- 	opacity: 1.0; 
- 	-webkit-filter: grayscale(0);
-}	
 
-li, 
+ul:hover li:hover {
+ 	opacity: 1.0;
+ 	-webkit-filter: grayscale(0);
+}
+
+li,
 .filler {
 	display: inline-block;
     position: relative;
@@ -151,8 +151,8 @@ li > *:not(img) {
 	display: none;
 }
 
-li .overlay{
-/*	line-height: normal;
+/*li .overlay{
+	line-height: normal;
 	padding: 15px;
 	font-size: 2em;
 	text-transform: uppercase;
@@ -165,11 +165,11 @@ li .overlay{
 	width: 100%;
 	height: 100%;
 	transition: all 0.15s ease-in-out;
-	opacity: 0;*/
+	opacity: 0;
 }
 
 li .overlay::before{
-/*    content: '+';
+    content: '+';
     display: block;
     font-size: 32px;
     line-height: 1em;
@@ -179,8 +179,8 @@ li .overlay::before{
     position: absolute;
     top: 50%;
     margin: -0.5em 0 0 -0.5em;
-    left: 50%;*/
-}
+    left: 50%;
+}*/
 
 li:hover .overlay,
 li.active .overlay{
@@ -200,7 +200,7 @@ li:hover img {
 }
 
 .simpleBox-content {
-	
+
 }
 
 .simpleBox-show {
@@ -266,7 +266,7 @@ li:hover img {
 	li, .filler {
 		width: calc(100%/5);
 	}
-	.simpleBox-current-img, 
+	.simpleBox-current-img,
 	.simpleBox-show.has-content .simpleBox-current-img {
         float: none;
         /*width: 100%;*/

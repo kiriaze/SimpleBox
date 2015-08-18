@@ -10,7 +10,7 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-    
+
     <header class="intro">
         <h1 class="absurd paddless">SimpleBox</h1>
         <h5>An absurdly simple and fast responsive gallery</h5>
@@ -353,7 +353,7 @@ ul {
     list-style: none;
 }
 
-li, 
+li,
 .filler {
     display: inline-block;
     position: relative;
@@ -371,7 +371,7 @@ li img {
     display: none;
 }
 
-.simpleBox-show {   
+.simpleBox-show {
     position: relative;
     width: 100%;
     float: left;
@@ -383,11 +383,11 @@ li img {
 }
 
 li .overlay {
-    
+
 }
 
 .simpleBox-content {
-    
+
 }
 
 .simpleBox-close {
@@ -413,7 +413,7 @@ li .overlay {
 }
 
 @media only screen and (max-width: 640px) {
-    li, 
+    li,
     .filler {
         width: calc(100%/3);
     }
@@ -443,7 +443,7 @@ $('.container').simpleBox({
 
 </div>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.1/jquery.min.js"></script>
 <script src="js/prettify.js"></script>
 <script src="js/imagesloaded.js"></script>
 <script src="js/simpleBox.js"></script>
@@ -456,7 +456,9 @@ $('.container').simpleBox({
         // Call simpleBox
         // $('.simpleBox').simpleBox();
         $.simpleBox({
-            sequentialLoad: false
+            // sequentialLoad: false
+            slider: true,
+            // slSpeed: 50
         });
 
     });
